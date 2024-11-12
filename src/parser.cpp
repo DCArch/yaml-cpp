@@ -11,7 +11,7 @@
 namespace YAML {
 class EventHandler;
 
-Parser::Parser() : m_pScanner{}, m_pDirectives{} {}
+Parser::Parser() : m_pScanner((Scanner*)nullptr), m_pDirectives((Directives*)nullptr) {}
 
 Parser::Parser(std::istream& in) : Parser() { Load(in); }
 
