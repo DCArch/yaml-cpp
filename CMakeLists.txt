@@ -115,6 +115,8 @@ if(YAML_CPP_MAIN_PROJECT)
       $<${not-msvc}:-pedantic -pedantic-errors>)
 endif()
 
+target_compile_options(yaml-cpp PRIVATE -fPIC -DFMT_HEADER_ONLY=1 -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0)
+
 target_compile_options(yaml-cpp
   PRIVATE
     $<$<AND:${backport-msvc-runtime},${msvc-rt-mtd-static}>:-MTd>
